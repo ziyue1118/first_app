@@ -1,4 +1,9 @@
 FirstApp::Application.routes.draw do
+  resources :posts 
+  get "posts/new"
+  post "posts/create"
+  get "posts/:id" => "posts#show"
+  # get "welcome/index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +53,7 @@ FirstApp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'video#index'
+  root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
