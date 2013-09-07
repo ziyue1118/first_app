@@ -1,5 +1,7 @@
 FirstApp::Application.routes.draw do
-  resources :posts 
+  resources :posts do 
+    resources :comments
+  end
   get "posts/new"
   post "posts/create"
   get "posts/:id" => "posts#show"
